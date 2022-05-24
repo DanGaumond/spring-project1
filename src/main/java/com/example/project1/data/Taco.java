@@ -1,5 +1,6 @@
 package com.example.project1.data;
 
+import java.util.Date;
 import java.util.List;
 import lombok.Data;
 
@@ -8,6 +9,10 @@ import javax.validation.constraints.Size;
 
 @Data
 public class Taco {
+
+    private Long id;
+
+    private Date createdAt = new Date();
 
     @NotNull
     @Size(min=5, message="Name must be at least 5 characters long.")
