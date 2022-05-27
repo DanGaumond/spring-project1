@@ -1,13 +1,12 @@
 package com.example.project1.controllers;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import com.example.project1.data.Ingredient;
 import com.example.project1.data.Ingredient.Type;
 
-import com.example.project1.data.IngredientRepository;
+import com.example.project1.data.repositories.IngredientRepository;
 import com.example.project1.data.Taco;
 import com.example.project1.data.TacoOrder;
 import org.springframework.beans.factory.annotation.Autowired;

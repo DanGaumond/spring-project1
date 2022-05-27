@@ -5,7 +5,7 @@ import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 
 import com.example.project1.data.Ingredient;
-import com.example.project1.data.IngredientRepository;
+import com.example.project1.data.repositories.IngredientRepository;
 
 @Component
 public class IngredientByIdConverter implements Converter<String, Ingredient> {

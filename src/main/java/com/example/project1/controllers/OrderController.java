@@ -1,7 +1,6 @@
 package com.example.project1.controllers;
-import com.example.project1.data.OrderRepository;
+import com.example.project1.data.repositories.OrderRepository;
 import com.example.project1.data.TacoOrder;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
