@@ -1,17 +1,19 @@
 package com.example.project1.controllers;
 
 import com.example.project1.data.repositories.UserRepository;
+import com.example.project1.web.forms.RegistrationForm;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/register")
 public class RegistrationController {
 
-    private UserRepository userRepo;
-    private PasswordEncoder passwordEncoder;
+    private final UserRepository userRepo;
+    private final PasswordEncoder passwordEncoder;
 
     public RegistrationController(
             UserRepository userRepo, PasswordEncoder passwordEncoder) {
@@ -19,15 +21,10 @@ public class RegistrationController {
         this.passwordEncoder = passwordEncoder;
     }
 
-    @GetMapping
-    public String registerForm() {
-        return "registration";
+    @PostMapping
+    public String processRegistration(RegistrationForm form) {
+        userRepo.save(form.toUser(passwordEncoder));
+        return "redirect:/login";
     }
-
-//    @PostMapping
-//    public String processRegistration(RegistrationForm form) {
-//        userRepo.save(form.toUser(passwordEncoder));
-//        return "redirect:/login";
-//    }
 
 }

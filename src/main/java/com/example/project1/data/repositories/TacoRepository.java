@@ -1,9 +1,11 @@
 package com.example.project1.data.repositories;
 
-import com.example.project1.data.Ingredient;
+import com.example.project1.data.Taco;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.CrudRepository;
 
-public interface IngredientRepository extends CrudRepository<Ingredient, Long> {
+
+public interface TacoRepository extends CrudRepository<Taco, Long> {
+    Page<Taco> findAll(Pageable pageable);
 }
